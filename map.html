@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <title>Forbes' Top Romantic Cities 2017</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -35,18 +35,13 @@
   const view = new MapView({
     map: map,
     center: [-9.641176,43.064594], //Longitude, latitude
-    zoom: 3,
+    zoom: 2,
     container: "viewDiv"
  });
 
  const graphicsLayer = new GraphicsLayer();
  map.add(graphicsLayer);
 
- const point = { //Create a point
-    type: "point",
-    longitude: -8.002309,
-    latitude: 31.634783
- };
  const simpleMarkerSymbol = {
     type: "simple-marker",
     color: [255, 105, 180],  // Pink
@@ -56,11 +51,101 @@
     }
  };
 
- const pointGraphic = new Graphic({
-    geometry: point,
-    symbol: simpleMarkerSymbol
+ const popupTemplate = {
+    title: "{Name}",
+    content: "{Description}"
+ }
+
+ const attributes1 = {
+    Name: "#1",
+    Description: "Marrakech, Morocco"
+ }
+ const attributes2 = {
+    Name: "#2",
+    Description: "Lisbon, Portugal"
+ }
+ const attributes3 = {
+    Name: "#3",
+    Description: "Sydney, Australia"
+ }
+ const attributes4 = {
+    Name: "#4",
+    Description: "Montreal, Canada"
+ }
+ const attributes5 = {
+    Name: "#5",
+    Description: "Edinburgh, Scotland"
+ }
+
+ const point1 = { //Create a point
+    type: "point",
+    longitude: -8.002309,
+    latitude: 31.634783
+ };
+
+ const pointGraphic1 = new Graphic({
+    geometry: point1,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes1,
+    popupTemplate: popupTemplate
  });
- graphicsLayer.add(pointGraphic);
+ graphicsLayer.add(pointGraphic1);
+
+ const point2 = { //Create a point
+    type: "point",
+    longitude: -9.140074,
+    latitude: 38.721546
+ };
+
+ const pointGraphic2 = new Graphic({
+    geometry: point2,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes2,
+    popupTemplate: popupTemplate
+ });
+ graphicsLayer.add(pointGraphic2);
+ 
+ const point3 = { //Create a point
+    type: "point",
+    longitude: 151.211211,
+    latitude: -33.872125
+ };
+
+ const pointGraphic3 = new Graphic({
+    geometry: point3,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes3,
+    popupTemplate: popupTemplate
+ });
+ graphicsLayer.add(pointGraphic3);
+
+ const point4 = { //Create a point
+    type: "point",
+    longitude: -73.764935,
+    latitude: 45.503194
+ };
+
+ const pointGraphic4 = new Graphic({
+    geometry: point4,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes4,
+    popupTemplate: popupTemplate
+ });
+ graphicsLayer.add(pointGraphic4);
+
+ const point5 = { //Create a point
+    type: "point",
+    longitude: -3.200685,
+    latitude: 55.948201
+ };
+
+ const pointGraphic5 = new Graphic({
+    geometry: point5,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes5,
+    popupTemplate: popupTemplate
+ });
+ graphicsLayer.add(pointGraphic5);
 
  });
 </script>
